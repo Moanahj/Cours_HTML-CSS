@@ -1,0 +1,61 @@
+/* Pour modifier la police copie colle :
+Ds fichier HTML la balise link depuis Google Fonts le code police
+Ds le fichier CSS ajouter la propriété font-family avec code 
+
+Exemple ci dessous:
+HTML
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+CSS
+font-family: 'Roboto', sans-serif;
+
+Style en italique ou normal
+em
+{
+    font-style: normal;
+}
+Sachant que les balises em sur le fichier html mettent par défaut en italique
+
+font-weight:  "font-weight: bold;"
+bold pour gras
+normal pour normal
+thin pour fin
+Avec possibilité de précision en ajoutant une valeur comprise entre 100 et 900 (plus épais à moins épais)
+Thin (100)
+Extra-light (200)
+Light (300)
+Regular (400)
+Medium (500)
+SemiBold (600)
+Bold (700)
+ExtraBold/Heavy (800)
+Black (900)
+
+text-decoration:   "text-decoration: underline;"
+underline pour souligné
+ligne-through pour barrer
+none pour normal
+
+text-align: 
+left
+center
+right
+justify (pour que le txt prenne toute la largeur possible sans laisser d'espace blanc)
+NB: l'alignement ne fonctionne que sur des balises block (p, div, h1...)
+
+font-size
+taille absolue ou relative; conseillé en relative
+.elem1 {
+font-size: 1em;
+}
+
+.elem2 {
+font-size: 1.3em;
+}
+
+.elem3 {
+font-size: 2em;
+}
+*/

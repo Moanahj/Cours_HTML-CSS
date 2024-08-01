@@ -1,0 +1,86 @@
+/* 
+FLEXBOX
+
+Le principe de Flexbox est d'avoir un conteneur avec plusieurs éléments à l'intérieur. 
+Avec  display: flex;  sur le conteneur, les éléments à l'intérieur sont agencés en mode Flexbox (horizontalement, par défaut).
+
+Flexbox peut gérer toutes les directions. Avec  flex-direction , 
+on peut indiquer si les éléments sont agencés horizontalement (par défaut) ou verticalement. 
+Cela définit ce qu'on appelle l'axe principal.
+
+L'alignement des éléments se fait sur l'axe principal avec  justify-content  
+et sur l'axe secondaire avec  align-items .
+
+Avec  flex-wrap, on peut autoriser les éléments à revenir à la ligne s'ils n'ont plus d'espace.
+
+S'il y a plusieurs lignes, on peut indiquer comment les lignes 
+doivent se répartir entre elles avec  align-content. 
+
+ALIGNER LES ELEMENTS
+ex HTML
+<div class="container">
+<div class="element element1">Élément 1</div>
+<div class="element element2">Élément 2</div>
+<div class="element element3">Élément 3</div>
+</div>
+
+ex CSS
+.container {
+    display: flex;
+}
+
+DIRECTION
+flex-direction : 
+row (ligne)
+column (colonne)
+row-reverse (ordre inversé sur ligne)
+column-reverse (ordre inversé sur colonne)
+
+RETOUR A LA LIGNE
+flex-wrap
+nowrap (pas de retour à la ligne)
+wrap (les éléments vont à la ligne lorsque plus de place)
+wrap-reverse (les éléments vont à la ligne qd pas de place mais en ordre inversé)
+
+ALIGNEMENT AXE PRINCIPAL ET SECONDAIRE
+PRINCIPAL (horizontal, au choix)
+justify-content
+flex-start (alignés au début)
+flex-end (alignés à la fin)
+center (au centre)
+space-between (éléments étirés sur tout l'axe ac espace entre eux)
+space-around (éléments étirés sur tout l'axe avec en plus espace aux extrémités)
+
+ex
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px; (Un peu de hauteur pour que les éléments aient la place de bouger)
+}
+
+SECONDAIRE (vertical, si principal horizontal)
+align-items
+stretch (élem étirés sur tout l'axe)
+flex-start (alignés au début)
+flex-end (alignés à la fin)
+center (au centre)
+baseline (alignés sur la ligne de base / ressemble à flex-start)
+
+ex
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+REPARTIR LES BLOCS SUR PLUSIEURS LIGNES
+align-content
+stretch (élem s'étirent pour occuper tout l'espace)
+flex-start (élem placés au début)
+flex-end (élem placés à la fin)
+center (élem placés au centre)
+space-between (élem séparé entre eux)
+space-around (same avec espace aux extrémités)
+
+*/

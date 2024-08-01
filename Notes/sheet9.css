@@ -1,0 +1,136 @@
+/* TECHNIQUES MISE EN PAGE 
+
+TRANSFORMER LES ELEMENTS
+Grace à display
+
+Imposer à un élément de type inline à devenir block
+a {
+    display: block;
+}
+
+Imposer à un élem de type block à devenir inline
+a {
+    display: inline;
+}
+
+Pour rappel, en block l'elem va à la ligne et prend toute la place
+inline lui sera sur une ligne à la suite d'autres elem
+
+
+CACHER LES ELEMENTS
+display: none
+
+ex si on définit une classe secret class="secret"
+.secret {
+    display: none;
+}
+Pratique pr cacher des elem selon la taille de l'écran
+
+Liste des diff valeurs display: https://developer.mozilla.org/fr/docs/Web/CSS/display
+
+LE MEILLEUR MOYEN étant d'utiliser les valeurs inline et block combinées:
+display: inline-block  permet de rendre les elem inline tout en pouvant les dimentionner grace à la prop block
+
+
+POSITIONNER LES ELEMENTS
+position
+
+Par defaut, le navigateur ne supperpose jamais les élements, mais cela peut etre décidé grace à cette new prop
+position: relative
+ positionnement relatif = permet de décaler l'élément par rapport à sa position normale.
+position: absolute
+ positionnement absolu = permet de placer un élément n'importe où sur la page (en haut à gauche, en bas à droite, tout au centre, etc.)
+
+Definir le positonnemt relatif
+position: relative (left right top bottom pour le décalage)
+ex
+a {
+    background-color: white;
+    position: relative;
+    top: 6px;
+    left: 10px;
+}
+
+Definir le positionnemt absolu
+position: absolute (left right top bottom et le déplace n'importe où sur la page)
+a {
+    background-color: white;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+
+
+GERER LE CHEVAUCHEMENT
+vous pouvez utiliser la propriété z-index pour indiquer quel élément doit apparaître au-dessus des autres : 
+vous empilez vos éléments dans l'ordre souhaité ! 
+L'élément ayant la valeur de  z-index  la plus élevée sera placé par-dessus les autres.
+
+ex HTML
+<div class="conteneur">
+    <div class="box une">Élément 1</div>
+    <div class="box deux">Élément 2</div>
+    <div class="box trois">Élément 3</div>
+<div>
+
+associé à l'ex CSS
+
+.conteneur {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+
+.une {
+    background-color: #C2B0F9;
+    position: absolute;
+    left: 0;
+    top: 90px;
+}
+
+.deux {
+    background-color: #CBFCB9;
+    position: absolute;
+    right: 70px;
+    top: 0;
+}
+
+.trois {
+    background-color: #F2A3BB;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}
+
+
+BLOQUER UN ELEMENT
+fixed ou sticky
+
+Rendre l'élem fixe avec position: fixed pour que l'élem ne bouge plus meme en défilant la page
+
+HTML
+<div class="box fixed">Élément fixed</div>
+
+CSS
+element {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+Rendre l'élem adhérent avec position: sticky
+
+HTML
+<div class="box sticky">Élément sticky</div>
+
+CSS
+element {
+    position: sticky;
+    top: 0;
+}
+
+Résultat : https://codepen.io/OpenClassroomsLearning/pen/dyezoyV?editors=1100
+
+En gros l'un est fixe et bouge sur toute la page, l'autre est délimité puis bouge
+
+*/

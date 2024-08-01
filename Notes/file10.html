@@ -1,0 +1,141 @@
+<!-- CREER UN TABLEAU 
+
+Créer une balise paire <table></table> indiquant le début et la fin du tableau
+C'est une balise de type block à placer en dehors d'un paragrape ou d'une balise div.
+
+INDIQUER LES VALEURS DU TABLEAU (HTML)
+<tr></tr> (table raw) indique le début et la fin d'une LIGNE de tableau
+<td></td> (table data) indique le début et la fin du contenu d'une cellule
+
+ex HTML
+<table>
+    <tr>
+        <td>Carmen</td>
+        <td>33 ans</td>
+        <td>Espagne</td>
+    </tr>
+    <tr>
+        <td>Michelle</td>
+        <td>26 ans</td>
+        <td>États-Unis</td>
+    </tr>
+</table>
+
+Pour ajouter des ligne et stylisé on bascule sur CSS
+
+AJOUTER DES BORDURES (CSS)
+On utilise la propriété border
+
+td pour selectionner toutes les cells du tableau
+td {
+    border: 1px solid black;
+}
+
+COLLER LES BORDURES DU TABLEAU (CSS)
+border-collapse
+qui peut prendre 2 valeurs
+collapse = pour coller les bordures
+seperate = pour les dissocier
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+AJOUT D'UNE LIGNE D'EN-TETE AU TABLEAU (HTML)
+<th> table header (se créer avec un <tr> et c'est la première ligne du tableau)
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Âge</th>
+        <th>Pays</th>
+    </tr>
+    <tr>
+        <td>Carmen</td>
+        <td>33 ans</td>
+        <td>Espagne</td>
+    </tr>
+    <tr>
+        <td>Michelle</td>
+        <td>26 ans</td>
+        <td>États-Unis</td>
+    </tr>
+</table>
+
+(CSS)
+NB: Penser à modifier le CSS afin que les bordures soient appliquées aux th et td
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+DONNER UN TITRE AU TABLEAU (HTML)
+<caption>
+A placer avant l'en-tete 
+
+<table>
+    <caption>Passagers du vol 377</caption>
+    <tr>
+        <th>Nom</th>
+        <th>Âge</th>
+        <th>Pays</th>
+    </tr>
+    <tr>
+        <td>Carmen</td>
+        <td>33 ans</td>
+        <td>Espagne</td>
+    </tr>
+    <tr>
+        <td>Michelle</td>
+        <td>26 ans</td>
+        <td>États-Unis</td>
+    </tr>
+</table>
+
+On peut changer la place du titre de notre tableau avec CSS
+CSS)()
+caption-side: bottom ou caption-side:top
+
+AJOUTER DES MARGES (CSS)
+avec la propriété padding sur les sélecteurs td et th
+
+td, th {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+CENTRER le tableau c'est au niveau du selecteur table avec la propriété margin
+margin: auto
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+STRUCTURER UN GRAND TABLEAU AVEC LES BALISES HTML
+thead, tbody, tfoot
+
+En-tête du tableau (en haut) se définit avec les balises <thead></thead>;  par défaut en gras
+Corps du tableau (au centre) se définit avec les balises <tbody></tbody>;  classique
+Pied du tableau (en bas) se définit avec les balises <tfoot></tfoot>.  par défaut en gras 
+
+FUSIONNER DES CELLS DU TABLEAU
+avec les attribus colspan et rowspan
+
+l'attribut  colspan  permet de FUSIONNER DES COLONNES : la fusion s'effectue horizontalement, 
+aussi bien sur les lignes d'en-tête que sur le contenu lui-même. 
+
+l'attribut  rowspan  permet de FUSIONNER DES LIGNES : là, deux lignes seront groupées entre elles. 
+La fusion s'effectuera verticalement.
+
+NB Notez qu'on peut modifier l'alignement vertical du texte des cellules de tableaux avec la 
+propriété vertical-align qu'on a vue dans le chapitre "Abordez d'autres techniques de mise en page".
+-->
+

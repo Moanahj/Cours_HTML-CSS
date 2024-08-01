@@ -1,0 +1,151 @@
+<!-- CREER DES FORMULAIRES 
+
+Balise HTML <form></form> permettant d'indiquer le début et la fin du formulaire
+
+2 attributs indispensables pr le construire:
+- method indiquant par quel moyen les données vont etre envoyées (get et post)
+- action indiquant l'adresse de la page ou du programme qui va traiter les infos
+
+<p>Texte avant le formulaire</p>
+    <form method="get" action="">
+        <p>Texte à l'intérieur du formulaire</p>
+    </form>
+<p>Texte après le formulaire</p>
+
+NB: 
+Dans 99% des cas on met post au lieu de get
+On laisse le champ vide dans action, en général on a une page front et back ce qui n'est pas
+notre cas ici.
+
+En règle générale, un site internet est composé de deux parties :
+une partie frontend, c’est la partie visible de notre site internet, celle qui s’affiche dans votre navigateur grâce à HTML, CSS et JavaScript ; 
+une partie backend, qui se trouve hébergée et qui s’exécute sur un serveur web. Elle permet de faire des tâches plus complexes, comme traiter un formulaire, envoyer un mail, sauvegarder des informations dans une base de données, etc.
+
+INSERER DES CHAMPS DE TXT
+balise HTML <input>
+
+Input est une balise orpheline.
+Allant avec l'attribut type qui changera selon le type de champ (email, txt, date, prénom...)
+
+    AJOUTER UNE ZONE DE TXT MONOLIGNE
+On ouvre avec la balise <input> et on précise la valeur 
+de l'attribut (type="text" ) pour indiquer qu'il s'agit d'une zone de texte d'une seule ligne :
+<input type="text">
+
+Ensuite, il faut donner un nom à votre zone de texte ; pour cela on utilise l'attribut  name.
+<input type="text" name="prenom">
+
+Ce qui donne :
+<form method="get" action="">
+    <input type="text" name="prenom">
+</form>
+
+    AJOUTER UN CHAMP DE LIBELLE (pour que le visiteur sache quoi ajouter)
+<form method="get" action="">
+    <label>Votre prénom</label> : <input type="text" name="prenom">
+</form>
+
++ lier le label à la zone de txt en ajoutant "id"
++ lier le label au champ avec "for"
+
+id = utilisé pr identifier l'élem HTML pr y accéder (unique à l'élem)
+name = se réfère à la variable du formulaire que l'élem concerne. 
+id name et prénom par ex auront la meme valeur.
+
+<form method="get" action="">
+    <p>
+        <label for="prenom">Votre prénom</label> : <input type="text" name="prenom" id="prenom">
+    </p>
+</form>
+
+De plus dans <input> on peut ajouter des attributs tq:
+size
+maxlenght
+value
+placeholder
+
+<form method="get" action="">
+    <p>
+        <label for="prenom">Votre prénom :</label>
+        <input type="text" name="prenom" id="prenom" placeholder="Ex. : Mathieu" size="30" maxlength="20">
+    </p>
+</form>
+
+    AJOUTER UNE ZONE DE TXT MULTILIGNE
+<textaera></textaera>
+
+<form method="get" action="">
+    <p>
+        <label for="ameliorer">Des conseils pour améliorer mon site ?</label><br>
+        <textarea name="ameliorer" id="ameliorer"></textarea>
+    </p>
+</form>
+
+UTILISER <input> PR DES FORMATS PARTICULIERS
+
+ un e-mail = <input type="email">
+ une URL = <input type="url"> On peut demander à saisir une adresse absolue, commençant généralement par  http:// 
+ un numéro de téléphone = <input type="tel">
+ un nombre entier = <input type="number">
+ un curseur (aussi appelé “slider”) = <input type="range"> (On utilise range pour demander au visiteur une valeur comprise entre deux bornes)
+ une date (Différents types de champs de sélection de date existent, comme :
+    <input type="date"> pour sélectionner une date
+    <input type="time"> pour l'heure ;
+    <input type="week">  pour la semaine ;
+    <input type="month"  pour le mois ;
+    <input type="datetime">  pour la date et l'heure (avec gestion du décalage horaire) ;
+    <input type="datetime-local">  pour la date et l'heure (sans gestion du décalage horaire).
+ une recherche = <input type="search">
+
+ NB: pr les types de champs nombre date et curseur possibilité de personnaliser
+ avec es attributs : min / max / step
+
+LAISSER LE VISITEUR CHOISIR UNE OPTION
+
+    LES CASES A COCHER
+<input type="checkbox" 
+ex <input type="checkbox" name="choix">
+
+<form method="get" action="">
+    <p>
+        Cochez les aliments que vous aimez manger :<br>
+        <input type="checkbox" name="frites" id="frites"> <label for="frites">Frites</label><br>
+        <input type="checkbox" name="steak" id="steak"> <label for="steak">Steak</label><br>
+        <input type="checkbox" name="epinards" id="epinards"> <label for="epinards">Épinards</label><br>
+        <input type="checkbox" name="huitres" id="huitres"> <label for="huitres">Huitres</label>
+    </p>
+</form>
+
+NB on peut ajouter checked pr ajouter un choix par défaut 
+<input type="checkbox" name="choix" checked>
+
+    LES BOUTONS RADIO
+<input type="radio"> (choix unique)
+
+<form method="get" action="">
+    <p>
+        Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br>
+        <input type="radio" name="age" value="moins15" id="moins15"> <label for="moins15">Moins de 15 ans</label><br>
+        <input type="radio" name="age" value="medium15-25" id="medium15-25"> <label for="medium15-25">15-25 ans</label><br>
+        <input type="radio" name="age" value="medium25-40" id="medium25-40"> <label for="medium25-40">25-40 ans</label><br>
+        <input type="radio" name="age" value="plus40" id="plus40"> <label for="plus40">Plus de 40 ans</label>
+    </p>
+</form>
+
+    LISTE DEROULANTE
+balises <select> et <option>
+
+    <form method="get" action="">
+    <p>
+        <label for="pays">Dans quel pays habitez-vous ?</label><br>
+        <select name="pays" id="pays">
+            <option value="espagne">Espagne</option>
+            <option value="royaume-uni">Royaume-Uni</option>
+            <option value="canada">Canada</option>
+            <option value="japon">Japon</option>
+        </select>
+    </p>
+</form>
+
+Là aussi, si on veut un choix par défaut ajouter selected au code
+<option value="canada" selected>Canada</option>

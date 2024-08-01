@@ -1,0 +1,75 @@
+/* Pour ajouter ou changer:
+
+COULEUR DU TXT avec plus de précision utiliser Color Picker
+2 formats:
+hexadecimale 6 chiffres précédés d'un # ex color: #FFC8D3
+notation RGB (Red Green Blue) ex color: rgb(250,25,118) 
+
+COULEUR EN ARRIERE PLAN on utilise background-color
+NB pour le fond de texte ajouter cela à body cart il prend l'ensemble de la page
+Et pour plus de spécificité modifier les sous balises pour leur appliquer les différentes couleurs choisies
+body {
+    background-color: black; 
+    color: white; 
+}
+h1 {
+    color: purple;
+}
+
+IMAGE DE FOND
+background-image
+
+Sous HTML cela donne
+<body>
+    <div class="banniere">
+        <h1>Mon blog</h1>
+    </div>
+    <p>Ceci est le contenu de mon premier paragraphe</p>
+    <p>Ceci est le contenu de mon deuxième paragraphe</p>
+</body>
+
+Sous CSS
+body {
+    font-family: sans-serif;
+    margin: 0; -> propriété margin 0 permet de s'assurer que les éléments prennent bien toute la largeur de la page
+}
+
+.banniere {
+    padding: 100px; -> padding permet d'ajouter de l'espace dans notre élément
+    background-image: url('paysage.jpg');
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+NB 
+margin: 0; -> propriété margin 0 permet de s'assurer que les éléments prennent bien toute la largeur de la page
+padding: 100px; -> padding permet d'ajouter de l'espace dans notre élément
+
+MODIFIER LES PROPRIETES DE L'IMAGE DE FOND
+background-attachement (fixed...)
+background-size (cover...)
+background-position (top, bottom, left, center, right...)
+
+NB : on peut utiliser la superpropriété qui les regroupent toutes qui est background
+.banniere
+{
+    background: url("paysage.jpg") cover center;
+}  
+Ici il regroupe size et position 
+
+CREER DES DEGRADES
+avec la propriété linear-gradient  -> à mettre dans la propriété background
+
+background: linear-gradient(90deg, #8360c3, #2ebf91);
+La ligne ci-dessus peut etre lu comme tel: 
+J'applique un dégradé linéaire, à 90 degrés, en partant de la couleur  #8360c3  pour arriver à la couleur  #2ebf91
+
+CHANGER LA TRANSPARENCE
+avec la propriété opacity 
+Allant de 0 à 1 0étant transparent et 1 le plus opaque
+Egalement possible avec la notation RGBA (extension de RGB) indiquant le niveau de transparence
+
+*/

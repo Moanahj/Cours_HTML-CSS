@@ -1,0 +1,35 @@
+/* MODELE DES BOITES
+
+BLOCK ET INLINE
+On place les balises dans 2 catégories
+- Block: ce type de balise crée un retour à la ligne automatique
+- Inline: ce type se trouve à l'intérieur d'une balise de type block
+
+Généralement on trouve ceci
+<a><a/> est inline
+<main><main/> est block
+
+DIMENSION DES BLOCS
+width (largeur du block)
+height (hauteur du block)
+exprimés en px (pixels, plus précis) ou %
+
+DEFINIR DES MARGES
+margin (taille de la marge exterieure)
+padding (taille de la marge intérieure)
+Par défaut, les marges sont appliquées à tous les cotés
+Pour encore plus de précison ajouter top, bottom, left right
+padding-top
+margin-bottom
+Ou encore ajouter toutes les caracteristiques ex:
+margin: 2px 0 3px 1px   (dans l'ordre haut droite bas gauche)
+
+CENTRER LES BLOCS
+Avec width et margin: auto
+Les règles sont es suivantes:
+ donner une largeur au bloc avec width
+ indiquer margin: auto (permettant de centrer horizontalement le contenu)
+ 
+ NB: Il n'est cependant pas possible de centrer verticalement 
+ un bloc avec cette technique. Seul le centrage horizontal est permis.
+*/

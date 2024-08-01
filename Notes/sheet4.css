@@ -1,0 +1,54 @@
+/* BORDURE ET OMBRES
+
+Border est une super-propriété se déclinant par 3 valeurs
+ Largeur définit avec une valeur en pixels (comme 2px)
+ Couleur indiqué avec un nom de couleur (hexadecimale ou rgb)
+ Type de bordure: solid (trait simple); double (double trait); dotted (pointillé); dashed (trait en tirets)
+
+Si choix de bordures différentes:
+border-top / border-bottom / border-right / border-left / border-width (épaisseur) / border-color
+Toutes celles-ci peuvent etre combinées ex border-top-width
+
+Sur html
+<p class="element">Élément</p>
+
+Sur CSS
+.element {
+    border-top: 3px #EB5353 dotted;
+    border-right: 3px #F9D923 double;
+    border-bottom: 3px #36AE7C dashed;
+    border-left: 3px #187498 solid;
+}
+OU encore (pour avoir qu'une bordure)
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-left: 5px #187498 solid;
+    padding: 100px;
+}
+
+ARRONDIR LES ANGLES
+border-radius en notant la taille de l'arrondi en pixel
+    border-radius: 10px;  -> si l'on choisit le meme arrondi partout
+OU
+    border-radius: 10px 30px 0px 90px;  -> si on veut différents arrondi; l'ORDRE étant gauche droite haut puis gauche droite bas
+
+ARRONDIS ELLIPTIQUES :
+Fancy Border Radius est un site permettant de crééer les arrondis souhaités et générant le code associé
+Le slash permet de définir cette prop elliptique, les valeurs sont en pourcentage
+
+AJOUTER DES OMBRES
+box-shadow propriété qui prend 4 valeurs
+ Décalage horizontal de l'ombre
+ Décalage vertical de l'ombre
+ Adoucissement du dégradé
+ Couleur de l'ombre
+
+ex :  box-shadow: 6px 6px 25px rgba(0, 0, 0);
+
+NB : Difficile de tout tester, pour cela utiliser les outils suivant pour les effets d'ombre
+Shadows Brumm ;
+vous inspirer des exemples listés sur CSS Scan
+
+
+ */

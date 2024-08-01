@@ -1,0 +1,154 @@
+/* CSS GRID 
+
+DEFINIR UNE GRID
+display: grid
+.conteneur {
+    display: grid;
+}
+et définir les colonnes et rangées avec les propritétés suivantes
+grid-template-columns (pr nbr de colonne, et largeur de chacune d'entre elles)
+grid-template-rows (pr nbr de rangées, et la hauteur de chacune d'entre elles)
+
+DEFINIR LES COLONNES
+grid-template-columns
+
+HTML definir les élem
+<div class="conteneur">
+    <div class="box">🐸 Élément 1</div>
+    <div class="box">🦊 Élément 2</div>
+    <div class="box">🦄 Élément 3</div>
+    <div class="box">🐶 Élément 4</div>
+    <div class="box">🐨 Élément 5</div>
+    <div class="box">🐒 Élément 6</div>
+    <div class="box">🦆 Élément 7</div>
+    <div class="box">🐙 Élément 8</div>
+    <div class="box">🐋 Élément 9</div>
+</div>
+
+La classe .box permet d'ajouter du style, par exemple ici la hauteur
+.box {
+  height: 150px;
+}
+créa de 3 colonnes ex
+.conteneur {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+}
+ en distinguant 3 élem (200px 200px 200px) le navigateur a compris qu'il y avait 3 colonnes
+
+DEFINIR LES RANGEES
+grid-template-rows
+(penser à supprimer la hauteur défini plus haut dans le style de hauteur des colonnes
+Autrement définir la hauteur dans box définit une hauteur fixe non modulable par la suite et pr chaque élem
+
+.conteneur 
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px 150px 200px;
+}
+
+AERER LE CONTENU
+avec la prop gap
+.conteneur {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px 150px 200px;
+    gap: 10px;
+}
+En ajoutant un gap avec le pixel choisit permet de mettre de l'espace entre les élem
+
+CHOISIR LES UNITES
+
+Jusque là nous utilisons px pour les hauteurs et largeurs.
+Mais on peut utiliser em, rem et des pourcentages
+OU ENCORE, conçu spécialement pour la prop grid il existe "fr" pour fraction units
+
+ex
+.conteneur {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 50px 100px 200px;
+    gap: 10px;
+}
+
+DEFINIR LA TAILLE DES ELEM
+grid
+
+NB: C'est surtout dans ce genre de cas qu'on voit que CSS Grid est complémentaire à Flexbox. 
+Créer ce type de mise en page serait vraiment plus laborieux avec Flexbox, alors qu'ici, 
+on peut le faire assez simplement.
+
+Utiliser pour cela grid-column et grid-row
+A l'utilisation de display: grid, le navigateur représente le contenu sous forme d'une grille
+délimitée par des lignes horizontales et verticales.
+Les propriétés nécéssaires seront les suivantes
+
+grid-column-start indique la ligne verticale de départ de l'élement 
+grid-column-end indique la ligne verticale d'arrivée de l'élem
+grid-row-start indique la ligne horizontale de départ de l'élem
+grid-row-end indique la ligne horizontale d'arrivée de l'élem
+
+Pour cela, changer le code HTML pr + de précision
+<div class="conteneur">
+    <div class="box une">🐸 Élément 1</div>
+    <div class="box deux">🦊 Élément 2</div>
+    <div class="box trois">🦄 Élément 3</div>
+    <div class="box quatre">🐶 Élément 4</div>
+    <div class="box cinq">🐨 Élément 5</div>
+    <div class="box six">🐒 Élément 6</div>
+    <div class="box sept">🦆 Élément 7</div>
+    <div class="box huit">🐙 Élément 8</div>
+    <div class="box neuf">🐋 Élément 9</div>
+</div>
+
+Et coté CSS
+.conteneur {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-gap: 10px;
+}
+
+MESURER LES COLONNES
+
+ex, si l'élem 1 doit prendre toute la largeur on notera
+
+.une {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+pouvant etre noté sur 1 ligne de code également comme ceci
+
+.une {
+    grid-column: 1 / 4;
+}
+
+NB: la fin de colonne doit etre le chiffre suivant le dernier après lequel on souhaite passer à la ligne
+ex ici on a 3 colonne, on dit d'aller jusqu'à 4
+
+MESURER LES RANGEES
+On veut maintenant créer le deuxième élément de la grid, qui s'étale sur deux rangées en hauteur,
+à partir de la deuxième rangée (l'élément  .une  occupe déjà la première rangée). 
+On précise donc que  .deux  commence à la rangée 2 et finit sur la rangée 4 :
+
+.deux {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.deux {
+    grid-row: 2 / 4;
+}
+
+Si vous voulez aller plus loin, vous pouvez :
+creuser la documentation de la mise en page à l'aide des CSS Grids 
+https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout;
+suivre le cours Create Web Page Layouts with CSS (il n’existe pas en version française sur la plateforme pour l’instant) 
+https://openclassrooms.com/fr/courses/5295881-create-web-page-layouts-with-css/5371781-introduction-to-css-grid;
+vous faire la main sur le petit jeu Grid Garden (en anglais) (vous pouvez créer un compte gratuitement sur Codepip)
+https://codepip.com/games/grid-garden/#fr.
+
+
+
+*/

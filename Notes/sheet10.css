@@ -1,0 +1,106 @@
+ /* UTILISER LE RESPONSIVE 
+ 
+ APPLIQUER UNE MEDIA QUERY
+ @media
+
+ Les media queries sont des règles qui indiquent quand on doit appliquer des propriétés CSS, 
+ en fonction de la taille de l'écran sur lequel s'affiche le site web.
+
+ @media screen and (max-width: 1200px) {
+(Insérez vos propriétés CSS ici, avec vos sélecteurs)
+}
+
+min-width et max-width sont appelés points de ruptures ou breakpoints.
+
+/!\ ATTENTION 
+Il faut penser à ajouter dans ead la ligne suivante (HTML)
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+UTILISER LES REGLES DISPONIBLES
+
+height  : hauteur de la zone d'affichage (fenêtre) ;
+width  : largeur de la zone d'affichage (fenêtre) ;
+orientation  : orientation du périphérique (portrait ou paysage) ;
+media  : type d'écran de sortie. Avec la valeur la plus utilisée :
+    screen  : écran “classique”,
+    all  : tout type de média,
+    print  : imprimante (pratique pour formater un contenu pour l’imprimer).
+ 
+Les règles peuvent être combinées à l'aide des mots suivants:
+    only  : “uniquement” ;
+    and  : “et” ;
+    not   : “non”.
+
+Exemples: 
+
+    Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px
+@media screen and (max-width: 1280px)
+    Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px
+@media all and (min-width: 1024px) and (max-width: 1280px)
+    Sur tous types d'écrans orientés verticalement
+@media all and (orientation: portrait)  
+
+Ex changement taille et couleur en CSS
+(Paragraphes en bleu par défaut)
+p {
+    color: blue;
+}
+(Nouvelles règles si la fenêtre fait au plus 1024px de large)
+@media screen and (max-width: 1024px) {
+    p {
+        color: red; 
+        background-color: black;
+        font-size: 1.2em;
+    }
+}
+
+CODER DES INTERFACES RESPONSIVES
+
+    Exploiter les minimum et maximum
+
+On peut demander à ce qu'un bloc ait des dimensions minimales et maximales.
+Définir les limites
+
+min-width : largeur minimale ;
+min-height : hauteur minimale ;
+max-width : largeur maximale ;
+max-height : hauteur maximale.
+
+Ex: demander à ce qu'une image occupe 50% de la largeur et qu'elle fasse 400px minimum
+img {
+    width: 50%;
+    min-width: 400px;
+}
+
+    Couper ce qui dépasse
+
+overflow qui sert à controler les dépassements.
+Si on veut que le txt ne dépasse pas les limites du paragraphe, utiliser la prop CSS overflow. Voici les valeurs qu'elle peut accepter :
+
+    visible (par défaut) : si txt dépasse les limites de taille, il reste visible et sort volontairement du bloc ;
+
+    hidden : si txt dépasse les limites, il sera tout simplement caché. On ne pourra pas voir tout le texte ;
+
+    scroll : txt sera caché s'il dépasse les limites. cette fois, le navigateur mettra en place
+ des barres de défilement pour qu'on puisse lire l'ensemble du txt. Comme un cadre à l'intérieur de la page ;
+
+    auto : c'est le mode “pilote automatique”. Le navigateur décide de mettre ou non des barres de défilement 
+    (il n'en mettra que si c'est nécessaire). VALEUR CONSEILLEE d'utiliser le plus souvent.
+
+ex pr le cas auto
+p {
+    width: 250px;
+    height: 110px;
+    text-align: justify;
+    overflow: auto;
+}
+
+AUSSI 
+Dans le cas spécifique du texte, vous pouvez même utiliser  text-overflow: ellipsis;  
+combiné à  white-space: no-wrap;  : ils vous permettent d'afficher "..." à la fin de votre txt 
+pour signaler à l'utilisateur que le texte a été tronqué.
+https://developer.mozilla.org/fr/docs/Web/CSS/text-overflow
+
+
+
+ */
